@@ -92,7 +92,7 @@
 						.append(this
 							.Make('a')
 							.text('Stalktoy')
-							.attr({ href:'//toolserver.org/~pathoschild/stalktoy?target=' + encodeURIComponent(target), title:'View details about the global user or IP address on all Wikimedia wikis.' })
+							.attr({ href:'//tools.wmflabs.org/pathoschild-contrib/stalktoy?target=' + encodeURIComponent(target), title:'View details about the global user or IP address on all Wikimedia wikis.' })
 						);
 
 					// link to central auth (if not an IP)
@@ -132,7 +132,7 @@
 							.append(this
 								.Make('a')
 								.text('stalktoy')
-								.attr({ href:'//toolserver.org/~pathoschild/stalktoy?target=' + encodeURIComponent(user), title:'Pathoschild\'s Stalktoy (comprehensive information about the given user on all Wikimedia wikis)'})
+								.attr({ href:'//tools.wmflabs.org/pathoschild-contrib/stalktoy?target=' + encodeURIComponent(user), title:'Pathoschild\'s Stalktoy (comprehensive information about the given user on all Wikimedia wikis)'})
 							)
 							.append(', ')
 							.append(this
@@ -240,7 +240,7 @@
 							.after(_this
 								.Make('a')
 								.text('Stalktoy')
-								.attr({ href: '//toolserver.org/~pathoschild/stalktoy?target=' + encodeURIComponent(user) })
+								.attr({ href: '//tools.wmflabs.org/pathoschild-contrib/stalktoy?target=' + encodeURIComponent(user) })
 							)
 							.after(' · ');
 					});
