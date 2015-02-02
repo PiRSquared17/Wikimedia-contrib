@@ -61,7 +61,8 @@
 				{name:'IP > global block', page:'Special:GlobalBlock', desc:'Globally block an IP'},
 				{name:'IP > global unblock', page:'Special:GlobalUnblock', desc:'Globally unblock an IP'},
 				{name:'global > groups', page:'Special:GlobalGroupPermissions', desc:'Manage global groups'},
-				{name:'global > wikisets', page:'Special:EditWikiSets', desc:'Manage global groups'}
+				{name:'global > wikisets', page:'Special:EditWikiSets', desc:'Manage global groups'},
+				{name:'local checkusers?', page:'Special:ListUsers/checkuser', desc:'List CheckUsers'}
 			];
 			for (var i = 0, len = menu.length; i < len; i++) {
 				var title = metaPrefix + menu[i].page;
@@ -74,6 +75,14 @@
 					)
 				);
 			}
+
+			$.get('/w/api.php', {action:'query', list:'allusers', augroup:'checkuser', format:'json'}).done(function(data) {
+				var length = 0;
+				if (typeof data !== "undefined" && typeof data.query !== "undefined") {
+					length = data.query.allusers.length;
+					$list.find('a[title="List CheckUsers"]').text((length ? (length + "+") : "no") + " local CUs");
+				}
+			});
 
 			/*****************
 			** Page actions
