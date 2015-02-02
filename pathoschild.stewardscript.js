@@ -62,10 +62,10 @@
 				{name:'IP > global unblock', page:'Special:GlobalUnblock', desc:'Globally unblock an IP'},
 				{name:'global > groups', page:'Special:GlobalGroupPermissions', desc:'Manage global groups'},
 				{name:'global > wikisets', page:'Special:EditWikiSets', desc:'Manage global groups'},
-				{name:'local checkusers?', page:'Special:ListUsers/checkuser', desc:'List CheckUsers'}
+				{name:'local checkusers?', local:true, page:'Special:ListUsers/checkuser', desc:'List CheckUsers'}
 			];
 			for (var i = 0, len = menu.length; i < len; i++) {
-				var title = metaPrefix + menu[i].page;
+				var title = (menu[i].local ? '' : metaPrefix) + menu[i].page;
 				$list.append(this
 					.Make('li')
 					.append(this
